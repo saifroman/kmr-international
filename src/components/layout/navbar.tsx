@@ -10,19 +10,20 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
 const components: {
   id: number;
   title: string;
   href: string;
+  hmatch: RegExp | string;
   description: string;
 }[] = [
   {
     id: 1,
     title: "Home",
     href: "/",
+    hmatch: /^[/]$/,
     description:
       "A modal dialog that interrupts the user with important content and expects a response.",
   },
@@ -30,6 +31,7 @@ const components: {
     id: 2,
     title: "About Us",
     href: "/about",
+    hmatch: "/about",
     description:
       "For sighted users to preview content available behind a link.",
   },
@@ -37,6 +39,7 @@ const components: {
     id: 3,
     title: "Contact Us",
     href: "/contact",
+    hmatch: "/contact",
     description:
       "For sighted users to preview content available behind a link.",
   },
@@ -66,11 +69,12 @@ function NavMenu() {
             <Link key={item.id} href={item.href} legacyBehavior passHref>
               <NavigationMenuLink
                 className={cn(
-                  "hover:text-[#ff6a28] focus:text-[#ff6a28]",
-                  navigationMenuTriggerStyle(),
-                  pathname.match(item.href)
-                    ? "bg-accent text-[#ff6a28]"
-                    : "text-black"
+                  "group bg-background hover:bg-accent focus:bg-accent data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:text-[#ff6a28] focus:text-[#ff6a28] focus:outline-none disabled:pointer-events-none disabled:opacity-50",
+                  {
+                    "text-[#ff6a28] focus:text-[#ff6a28]": pathname.match(
+                      item.hmatch
+                    ),
+                  }
                 )}
               >
                 {item.title}

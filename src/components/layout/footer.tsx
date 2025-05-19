@@ -55,12 +55,16 @@ function Footer() {
           </div>
           <div className="flex flex-col gap-2">
             <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">
-              Contuct Us
+              Contact Us
             </h4>
             <div className="flex flex-col gap-2">
-              <p className="leading-7">
-                Address: 212/1 Karim Villa, Fokirapool, Motijheel, Dhaka-1000.
-              </p>
+              <Link
+                target="_"
+                href={"https://maps.app.goo.gl/6R9T3vtvVjJJu9pJA"}
+                className="leading-7 hover:text-[#ff6a28]"
+              >
+                Address: 212/1 Karim Villa, Fakirapool, Motijheel, Dhaka-1000.
+              </Link>
               <p className="pt-0.5 leading-7">Phone: +8801833978229.</p>
             </div>
           </div>

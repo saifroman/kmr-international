@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
@@ -30,7 +31,7 @@ export default function AboutUsPage() {
                 </h3>
               </Button>
               <h2 className="w-[256px] text-center leading-7 font-bold capitalize [&:not(:first-child)]:mt-2">
-                FOUNDER & PROPRITOR
+                FOUNDER & PROPRIETOR
               </h2>
             </div>
           </div>
@@ -61,28 +62,35 @@ export default function AboutUsPage() {
           </div>
 
           <div className="flex flex-col items-center justify-center gap-2">
-            <div className="flex h-64 w-64 items-center justify-center rounded-xl shadow-2xl">
-              <Image
-                src={`/assets/BM Roman.jpg`}
-                width={256}
-                height={256}
-                style={{ width: 256, height: 256, borderRadius: 16 }}
-                alt="Picture of BM Roman"
-              />
-            </div>
-            <div className="flex flex-col items-center">
-              <Button
-                variant="outline"
-                className="mt-4 w-full rounded-full px-2 py-6"
-              >
-                <h3 className="w-[256px] text-xl font-semibold tracking-tight">
-                  BM. Saif Haque Roman
-                </h3>
-              </Button>
-              <h2 className="w-[256px] text-center leading-7 font-bold capitalize [&:not(:first-child)]:mt-2">
-                DIRECTOR
-              </h2>
-            </div>
+            <Link
+              href={"/about/bm-saif-haque-roman"}
+              className="flex w-full flex-col items-center justify-center"
+            >
+              <div className="flex h-64 w-64 items-center justify-center rounded-xl shadow-2xl">
+                <Image
+                  src={`/assets/BM Roman.jpg`}
+                  width={256}
+                  height={256}
+                  style={{ width: 256, height: 256, borderRadius: 16 }}
+                  alt="Picture of BM Roman"
+                />
+              </div>
+              <div className="flex flex-col items-center">
+                <Link href={"/about/bm-saif-haque-roman"} className="w-full">
+                  <Button
+                    variant="outline"
+                    className="mt-4 w-full cursor-pointer rounded-full px-2 py-6"
+                  >
+                    <h3 className="w-[256px] text-xl font-semibold tracking-tight">
+                      BM. Saif Haque Roman
+                    </h3>
+                  </Button>
+                </Link>
+                <h2 className="w-[256px] text-center leading-7 font-bold capitalize [&:not(:first-child)]:mt-2">
+                  DIRECTOR
+                </h2>
+              </div>
+            </Link>
           </div>
 
           <div className="flex flex-col items-center justify-center gap-2">

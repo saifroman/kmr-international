@@ -17,9 +17,9 @@ export default function AboutUsPage() {
           BM. Saif Haque Roman
         </h2>
         <div className="flex flex-col items-center justify-center">
-          <h3 className="text-2xl font-semibold tracking-tight">MBA, BBA</h3>
+          <h3 className="text-2xl font-semibold tracking-tight">BBA</h3>
           <blockquote className="text-xl font-semibold italic">
-            American International University Bangladesh
+            AMERICAN INTERNATIONAL UNIVERSITY - BANGLADESH
           </blockquote>
         </div>
         <h2 className="w-full pt-4 text-left text-xl font-semibold tracking-tight">

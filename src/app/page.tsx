@@ -1,11 +1,14 @@
-import { OurBuyers } from "@/components/home/our-buyers";
 import Image from "next/image";
+
+import { OurBuyers } from "@/components/home/our-buyers";
+import { OurClients } from "@/components/home/our-clients";
+import { OurConcerns } from "@/components/home/our-concerns";
 
 export default function HomePage() {
   return (
     <div className="px-2 py-4 xl:px-6 xl:py-6">
-      <div className="grid grid-flow-col grid-rows-3 gap-4">
-        <div className="relative col-span-5 row-span-30 flex items-center justify-center rounded-2xl shadow-xl">
+      <div className="grid auto-cols-auto grid-flow-col grid-rows-3 gap-4">
+        <div className="relative col-span-15 row-span-30 flex items-center justify-center rounded-2xl shadow-xl">
           <Image
             src={`/assets/KMR International Baground.jpg`}
             fill
@@ -14,18 +17,9 @@ export default function HomePage() {
         </div>
         <OurBuyers />
 
-        <div className="col-span-1 row-span-15 flex w-fit flex-col items-center justify-center rounded-xl shadow">
-          OUR CLIENTS
-          <p>DEKKO LOGO</p>
-          <p>AZIM LOGO</p>
-        </div>
+        <OurClients />
 
-        <div className="col-span-1 row-span-15 flex flex-col items-center justify-center rounded-xl shadow">
-          OUR CONCERN
-          <p>DREUSS LOGO</p>
-          <p>SENERGYS LOGO</p>
-          <p>TOTAL APPARELS LOGO</p>
-        </div>
+        <OurConcerns />
       </div>
     </div>
   );
